@@ -1,0 +1,13 @@
+.tab-header-background {
+    -fx-background-color: #64b7ea ;
+	
+}
+
+.tab{
+	-fx-pref-width:195;
+	-fx-alignment:center;
+}
+.tab:hover{
+	-fx-background-color: #6495ED;
+	
+}

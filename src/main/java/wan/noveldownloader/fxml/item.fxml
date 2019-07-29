@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" prefHeight="150.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ImageView fx:id="iconImg" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+        <VBox prefHeight="80.0" prefWidth="260.0" spacing="20.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="30.0">
+            <children>
+                <Label fx:id="name" text="N/A">
+                    <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                    </font>
+                </Label>
+                <JFXProgressBar fx:id="progressbar" prefHeight="10.0" prefWidth="260.0" style="-fx-background-color: blue;" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Text fx:id="tvHasDownload" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="tvPercentProcess" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            </children>
+            <padding>
+                <Insets top="10.0" />
+            </padding>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" spacing="10.0" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="25.0">
+            <children>
+                <Text fx:id="flagText" fill="#60d9e4" strokeType="OUTSIDE" strokeWidth="0.0" text="下载目录中" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets right="50.0" />
+                    </HBox.margin>
+                </Text>
+                <JFXButton fx:id="btnPause" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" ellipsisString=" " graphicTextGap="0.0" prefHeight="50.0" prefWidth="50.0" text="0" textAlignment="CENTER">
+                    <graphic>
+                        <ImageView fx:id="imgPause" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/pause.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnCancel" alignment="CENTER" contentDisplay="CENTER" ellipsisString=" " graphicTextGap="0.0" prefHeight="20.0" prefWidth="20.0" text=" " textAlignment="CENTER">
+                    <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/cancel.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,32 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="BadExceptionCaught" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="BadExceptionDeclared" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="BadExceptionThrown" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="CatchMayIgnoreException" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="CaughtExceptionImmediatelyRethrown" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="CheckedExceptionClass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="ContinueOrBreakFromFinallyBlock" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="EmptyFinallyBlock" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="EmptyTryBlock" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ErrorRethrown" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="ExceptionFromCatchWhichDoesntWrap" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="ExtendsThrowable" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="FinallyBlockCannotCompleteNormally" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="InstanceofCatchParameter" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="NestedTryStatement" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="NewExceptionWithoutArguments" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="NonFinalFieldOfException" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="NullThrown" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="ReturnFromFinallyBlock" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ThreadDeathRethrown" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="ThrowCaughtLocally" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="ThrowFromFinallyBlock" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ThrowsRuntimeException" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="TooBroadCatch" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="TooBroadThrows" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="UncheckedExceptionClass" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="UnnecessaryInitCause" enabled="true" level="ERROR" enabled_by_default="true" />
+  </profile>
+</component>
