@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" prefHeight="150.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ImageView fx:id="iconImg" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+        <VBox prefHeight="80.0" prefWidth="260.0" spacing="20.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="30.0">
+            <children>
+                <Label fx:id="name" text="从零开始id异世界">
+                    <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                    </font>
+                </Label>
+            <Label fx:id="time" text="2019.08.02">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            </children>
+            <padding>
+                <Insets top="10.0" />
+            </padding>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0" spacing="10.0" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="25.0">
+            <children>
+            <Label fx:id="size" text="10.2MB">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnFile" alignment="CENTER" contentDisplay="CENTER" ellipsisString=" " graphicTextGap="0.0" prefHeight="20.0" prefWidth="20.0" text=" " textAlignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/file.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+                <JFXButton fx:id="btnDelete" alignment="CENTER" contentDisplay="CENTER" ellipsisString=" " graphicTextGap="0.0" prefHeight="20.0" prefWidth="20.0" text=" " textAlignment="CENTER">
+                    <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/cancel.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

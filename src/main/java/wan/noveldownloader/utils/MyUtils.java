@@ -79,6 +79,20 @@ public class MyUtils {
         });
     }
 
+    public static void setWebLinkAutoAction(Hyperlink... hyperlinks) {
+        for (Hyperlink hyperlink : hyperlinks) {
+            hyperlink.setBorder(Border.EMPTY);
+            hyperlink.setOnMouseClicked(event -> {
+                try {
+                    Desktop.getDesktop().browse(new URI(hyperlink.getText()));
+                    hyperlink.setVisited(false);
+                } catch (IOException | URISyntaxException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    }
+
     /**
      * 设置链接可以自动跳转资源管理器，浏览器或者打开QQ添加好友界面（保证hyperlink的文字是正确的目录路径，网址，QQ号）
      * QQ添加好友测试不通过，还有bug
@@ -137,6 +151,7 @@ public class MyUtils {
 
     /**
      * 显示toast
+     *
      * @param pane 控件所在的画板（AnchorPane, BorderPane, DialogPane, FlowPane, GridPane, HBox, PopupControl.CSSBridge, StackPane, TextFlow, TilePane, VBox）
      * @param text 显示文字
      */
@@ -147,12 +162,14 @@ public class MyUtils {
 
     /**
      * 设置控件的背景颜色
+     *
      * @param control 控件
-     * @param color 颜色，可以是16进制颜色或者是颜色名
+     * @param color   颜色，可以是16进制颜色或者是颜色名
      */
-    public static void setControlBackground(Control control,String color) {
-        control.setBackground(new Background(new BackgroundFill(Paint.valueOf(color),null,null)));
+    public static void setControlBackground(Control control, String color) {
+        control.setBackground(new Background(new BackgroundFill(Paint.valueOf(color), null, null)));
     }
+
     /**
      * 获得fxml文件路径
      *
@@ -175,6 +192,7 @@ public class MyUtils {
 
     /**
      * 获得当前jar包所在的文件夹
+     *
      * @return 路径
      */
     public static String getCurrentPath() {

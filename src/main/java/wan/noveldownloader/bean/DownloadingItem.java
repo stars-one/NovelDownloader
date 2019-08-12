@@ -5,6 +5,7 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,8 +33,14 @@ public class DownloadingItem {
     private String progressText = "";// 文字（已下载/总下载 2/168）
     private boolean isPause = false;//暂停标志
     private ItemController item;
-    private Map<Integer, String> tempFileMaps = new HashMap<>();//已缓存的章节，需要合并
+    private Map<Integer, String> tempFileMaps = Collections.synchronizedMap(new HashMap<>());//已缓存的章节，需要合并
+    private File file;
     private Task<Void> task;
+    private onFinishListener listener;
+
+    public interface onFinishListener {
+        void onFinish();
+    }
 
     public DownloadingItem(String name, String imgPath, String downloadPath, Map<Integer, String> maps) {
         this.downloadPath = downloadPath;
@@ -50,10 +57,11 @@ public class DownloadingItem {
         String tempName = url.substring(start + 2, end) + "_";
 
         task = new Task<Void>() {
+
             @Override
             protected void succeeded() {
                 super.succeeded();
-                System.out.println("下载成功");
+                listener.onFinish();
             }
 
             @Override
@@ -61,11 +69,12 @@ public class DownloadingItem {
                 int i = 0;
                 //下载每一章
                 while (i < maps.size()) {
+
                     if (!isPause) {
                         String url = maps.get(i);
                         DownloadTool.downloadChapter(url, downloadPath, i);
                         //保存章节缓存，之后合并文件需要
-                        tempFileMaps.put(i, downloadPath+tempName + i + ".txt");
+                        tempFileMaps.put(i, downloadPath + tempName + i + ".txt");
                         //更新进度条的进度
                         updateProgress(i, maps.size());
                         hasDownloadCount = i;
@@ -73,7 +82,9 @@ public class DownloadingItem {
                         setProcessText();
                         updateMessage(getProcessText());
                         //百分比进度条文字显示
-                        setPercentProgressTextProperty();
+                        double temp = hasDownloadCount / (allCount * 1.0);
+                        DecimalFormat df = new DecimalFormat("0.00");
+                        percentProgressTextProperty.set(df.format(temp * 100) + "%");
                         i++;
                     } else {
                         Thread.sleep(10);
@@ -82,32 +93,46 @@ public class DownloadingItem {
                 percentProgressTextProperty.set("100.00%");
                 //合并
                 flagTextProperty.set("合并文件中");
-                for (i = 0; i < allCount; i++) {
-                    String s = tempFileMaps.get(i);
+
+                file = new File(downloadPath.substring(0,downloadPath.indexOf("temp")), name + ".txt");
+                for (int j = 0; j < allCount; j++) {
+                    String s = tempFileMaps.get(j);
+                    File chapterFile = new File(s);
                     try {
-                        List<String> list = FileUtils.readLines(new File(s), "GBK");
-                        FileUtils.writeLines(new File("Q:\\test", name + ".txt"), "GBK", list, true);
+                        List<String> list = FileUtils.readLines(chapterFile, "GBK");
+                        FileUtils.writeLines(file, "GBK", list, true);
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    if (i + 1 == allCount) {
+                    chapterFile.delete();//删除当前章节的缓存txt文件
+                    if (j + 1 == allCount) {
                         flagTextProperty.set("合并完成");
                     }
                 }
                 return null;
+
             }
         };
     }
 
-    private void setPercentProgressTextProperty() {
-        double temp = hasDownloadCount / (allCount * 1.0);
-        DecimalFormat df = new DecimalFormat("#.00");
-        percentProgressTextProperty.set(df.format(temp * 100) + "%");
+    public String getFilePath() {
+        return file.getPath();
+    }
+
+
+    public onFinishListener getListener() {
+        return listener;
+    }
+
+    public void setListener(onFinishListener listener) {
+        this.listener = listener;
     }
 
     public StringProperty getPercentProgressTextProperty() {
         return percentProgressTextProperty;
     }
+
     public StringProperty getFlagTextProperty() {
         return flagTextProperty;
     }
@@ -127,7 +152,6 @@ public class DownloadingItem {
     public void setFlag(boolean flag) {
         this.isPause = flag;
     }
-
 
     public void setFlagTextProperty(String flagTextProperty) {
         this.flagTextProperty.set(flagTextProperty);
@@ -160,4 +184,5 @@ public class DownloadingItem {
     public Task<Void> getTask() {
         return task;
     }
+
 }

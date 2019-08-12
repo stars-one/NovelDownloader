@@ -6,7 +6,13 @@ import java.util.List;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.layout.Pane;
+import wan.noveldownloader.bean.DownloadItem;
+import wan.noveldownloader.bean.HasDownloadItem;
+import wan.noveldownloader.controller.HasDownloadItemController;
 import wan.noveldownloader.controller.ItemController;
+import wan.noveldownloader.controller.MainSceneController;
+import wan.noveldownloader.utils.JdbcUtil;
+import wan.noveldownloader.utils.MyUtils;
 
 /**
  * @author StarsOne
@@ -16,11 +22,13 @@ import wan.noveldownloader.controller.ItemController;
 public class DownloadingAdapter {
     private List<ItemController> itemControllers;
     private ObservableList<Node> nodes;
+    private MainSceneController mainSceneController;
+    List<HasDownloadItemController> hasDownloadItemControllers = new ArrayList<>();
 
-
-    public DownloadingAdapter(Pane pane) {
+    public DownloadingAdapter(Pane pane, MainSceneController mainSceneController) {
         itemControllers = new ArrayList<>();
         nodes = pane.getChildren();
+        this.mainSceneController = mainSceneController;
     }
 
     public DownloadingAdapter(List<ItemController> itemControllers, ObservableList<Node> nodes) {
@@ -41,7 +49,22 @@ public class DownloadingAdapter {
         itemController.setOnclick(this::deleteNode);
         nodes.add(itemController.getPane());
         itemControllers.add(itemController);
-        itemController.startTask(url,downloadPath);
+        itemController.startTask(url, downloadPath, () -> {
+            itemController.closeThis();
+            //下载完毕，往已下载页面添加item
+            String filePath = itemController.getItem().getFilePath();
+            String imgPath = itemController.getItem().getImgPath();
+            HasDownloadItem hasDownloadItem = new HasDownloadItem(filePath, imgPath);
+            HasDownloadItemController hasDownloadItemController = new HasDownloadItemController(hasDownloadItem);
+            hasDownloadItemControllers.add(hasDownloadItemController);
+            hasDownloadItemController.setBtnDeleteAction(()->mainSceneController.deleteHasDownloadItem(hasDownloadItemController));
+            mainSceneController.addHasDownloadItem(hasDownloadItemController);
+
+            //存在数据库中
+            DownloadItem downloadItem = new DownloadItem(filePath, imgPath);
+            new JdbcUtil(MyUtils.getCurrentPath()).addDownloadItem(downloadItem);
+        });
+
 
         //novel.setItem(itemController);
         //new Thread(novel.getTask()).start();//开启下载进程
@@ -51,7 +74,10 @@ public class DownloadingAdapter {
         nodes.add(itemController.getPane());
         itemControllers.add(itemController);*/
 
+    }
 
+    public List<HasDownloadItemController> getHasDownloadItemControllers() {
+        return hasDownloadItemControllers;
     }
 
     public void deleteNode(Pane pane) {

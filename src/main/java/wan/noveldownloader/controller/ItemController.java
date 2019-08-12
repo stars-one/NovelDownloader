@@ -58,7 +58,8 @@ public class ItemController implements Initializable {
     private Text tvPercentProcess;
 
     private DownloadingItem item;
-
+    private btnOnclickListener listener;
+    private DownloadingItem.onFinishListener onFinishListener;
     public ItemController() {
         FXMLLoader item = new FXMLLoader(MyUtils.getFxmlPath("item"));
         item.setController(this);
@@ -69,11 +70,37 @@ public class ItemController implements Initializable {
         }
     }
 
+    public void closeThis() {
+        listener.onclick(rootPane);
+    }
+
     /**
      * 开始下载每一章
      */
     public void startDownloadChacter() {
         new Thread(item.getTask()).start();
+
+       /* //开启线程，观察任务是否完成，移除当前item
+        new Thread(new Task<Void>() {
+            @Override
+            protected void succeeded() {
+                super.succeeded();
+                listener.onclick(rootPane);
+                //onFinishListener.onFinish(item);
+            }
+
+            @Override
+            protected Void call() throws Exception {
+                while (true) {
+                    if (item.getFlagTextProperty().get().equals("合并完成")) {
+                        break;
+                    } else {
+                        Thread.sleep(2000);
+                    }
+                }
+                return null;
+            }
+        }).start();*/
     }
 
     /**
@@ -81,12 +108,13 @@ public class ItemController implements Initializable {
      * @param url
      * @param downloadPath
      */
-    public void startTask(String url, String downloadPath) {
+    public void startTask(String url, String downloadPath,DownloadingItem.onFinishListener listener) {
 
         new Thread(new Task<Void>() {
             @Override
             protected void succeeded() {
                 super.succeeded();
+                item.setListener(listener);
                 item.setFlagTextProperty("正在下载");
                 fillData(item); //显示小说封面图片和小说名字
                 bindControl();//设置相关的数据绑定
@@ -102,9 +130,9 @@ public class ItemController implements Initializable {
 
     private void bindControl() {
         //绑定进度条,显示文字
-        flagText.textProperty().bind(item.getFlagTextProperty());
         progressbar.progressProperty().bind(item.getTask().progressProperty());
         tvHasDownload.textProperty().bind(item.getTask().messageProperty());
+        flagText.textProperty().bind(item.getFlagTextProperty());//下载状态
         tvPercentProcess.textProperty().bind(item.getPercentProgressTextProperty());
     }
 
@@ -113,7 +141,8 @@ public class ItemController implements Initializable {
         setIconImg(downloadingItem.getImgPath());
     }
 
-    public void setOnclick(btnOnclickListener listener) {
+    public void setOnclick(btnOnclickListener listener1) {
+        listener = listener1;
         btnCancel.setOnAction(event -> {
             listener.onclick(rootPane);
         });
@@ -132,7 +161,6 @@ public class ItemController implements Initializable {
         name.setText(text);
     }
 
-
     public Pane getPane() {
         return rootPane;
     }
@@ -140,7 +168,6 @@ public class ItemController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnPause.setOnAction(event -> pauseOrHold());
-
     }
 
     public void pause() {
@@ -163,7 +190,14 @@ public class ItemController implements Initializable {
         } else {
             hold();
         }
+    }
 
+    public DownloadingItem getItem() {
+        return item;
+    }
+
+    public void setItem(DownloadingItem item) {
+        this.item = item;
     }
 
     public interface btnOnclickListener {

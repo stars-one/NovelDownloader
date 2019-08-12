@@ -8,9 +8,13 @@
         </element>
         <element id="module-output" name="NovelDownloader" />
       </element>
-      <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.12.1" />
-      <element id="library" level="project" name="Maven: com.jfoenix:jfoenix:8.0.8" />
-      <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="Maven: com.jfoenix:jfoenix:8.0.8" />
+        <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.12.1" />
+        <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
+        <element id="file-copy" path="$PROJECT_DIR$/lib/commons-dbutils-1.7.jar" />
+        <element id="file-copy" path="$PROJECT_DIR$/lib/sqlite-jdbc-3.8.11.1.jar" />
+      </element>
     </root>
   </artifact>
 </component>

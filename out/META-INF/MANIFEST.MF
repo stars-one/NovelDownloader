@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
-Class-Path: jsoup-1.12.1.jar jfoenix-8.0.8.jar commons-io-2.2.jar
+Class-Path: lib/jsoup-1.12.1.jar lib/jfoenix-8.0.8.jar lib/commons-io-
+ 2.2.jar lib/sqlite-jdbc-3.8.11.1.jar lib/commons-dbutils-1.7.jar
 Main-Class: wan.noveldownloader.Main
 
