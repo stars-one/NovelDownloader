@@ -1,5 +1,9 @@
 # 星之小说下载器
 
+## 预览
+![](https://img2018.cnblogs.com/blog/1210268/201908/1210268-20190812204853818-799797344.gif)
+## 下载地址：
+[下载地址](https://github.com/Stars-One/NovelDownloader/releases/download/%E6%98%9F%E4%B9%8B%E5%B0%8F%E8%AF%B4%E4%B8%8B%E8%BD%BD%E5%99%A8v1.0/NovelDownloader_v1.0.zip)
 ## 说明：
 需要jdk环境
 
@@ -24,9 +28,6 @@ java -jar d:\test\NovelDownloader.jar
 ```
 java -Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -jar Q:\JavaProject\NovelDownloader\out\artifacts\NovelDownloader_jar\NovelDownloader.jar
 ```
-
-## 预览
-![](https://img2018.cnblogs.com/blog/1210268/201908/1210268-20190812204853818-799797344.gif)
 
 ## 功能：
 - 取消正在下载的任务（已完成）
