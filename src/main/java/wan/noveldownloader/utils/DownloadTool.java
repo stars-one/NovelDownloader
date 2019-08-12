@@ -35,19 +35,23 @@ public class DownloadTool {
         int index = imgUrl.lastIndexOf("/");
         String fileName = imgUrl.substring(index);
         try {
-            URL url = new URL(imgUrl);
-            URLConnection connection = url.openConnection();//打开链接
-            InputStream inputStream = connection.getInputStream();
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
-            File file = new File(path, fileName);
-            BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file));
-            int c;
-            byte[] temp = new byte[1024 * 2];//提供个缓冲区
-            while ((c = bufferedInputStream.read(temp)) != -1) {
-                bufferedOutputStream.write(temp, 0, c);//读多少，写多少
+            File file = new File(path+File.separator+"img", fileName);
+            if (!file.exists()) {
+                URL url = new URL(imgUrl);
+                URLConnection connection = url.openConnection();//打开链接
+                InputStream inputStream = connection.getInputStream();
+                BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+
+                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file));
+                int c;
+                byte[] temp = new byte[1024 * 2];//提供个缓冲区
+                while ((c = bufferedInputStream.read(temp)) != -1) {
+                    bufferedOutputStream.write(temp, 0, c);//读多少，写多少
+                }
+                bufferedOutputStream.close();
+                inputStream.close();
             }
-            bufferedOutputStream.close();
-            inputStream.close();
+
             return file.getPath();
         } catch (IOException e) {
             e.printStackTrace();
@@ -78,7 +82,7 @@ public class DownloadTool {
             }
 
             String imgPath = downloadImage(imgUrl, downloadPath);
-            return new DownloadingItem(name, imgPath, downloadPath, maps);
+            return new DownloadingItem(name, imgPath, downloadPath, maps,url);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -100,17 +104,20 @@ public class DownloadTool {
             int start = url.indexOf("k") + 2;
             String fileName = url.substring(start, end) + "_" + num;
             File file = new File(path, fileName+".txt");
+            //章节文件已下载，跳过
+            if (!file.exists()) {
+                Document document = Jsoup.connect(url).get();
+                Element mainTextDiv = document.selectFirst("#mlfy_main_text");
+                String title = mainTextDiv.selectFirst("h1").text();//章节标题
 
-            Document document = Jsoup.connect(url).get();
-            Element mainTextDiv = document.selectFirst("#mlfy_main_text");
-            String title = mainTextDiv.selectFirst("h1").text();//章节标题
+                Element element = document.selectFirst("#TextContent");
+                String content = element.text().replaceAll(" ", "\n").replaceAll("((\r\n)|\n)[\\s\t ]*(\\1)+", "$1").replaceAll("&nbsp;", "");
+                content = content.replaceAll("本章未完，点击下一页继续阅读", "").replaceAll("＞＞", "");//章节内容
 
-            Element element = document.selectFirst("#TextContent");
-            String content = element.text().replaceAll(" ", "\n").replaceAll("((\r\n)|\n)[\\s\t ]*(\\1)+", "$1").replaceAll("&nbsp;", "");
-            content = content.replaceAll("本章未完，点击下一页继续阅读", "").replaceAll("＞＞", "");//章节内容
+                //文件写入操作
+                FileUtils.writeStringToFile(file,title+"\n"+content+"\n","GBK");
+            }
 
-            //文件写入操作
-            FileUtils.writeStringToFile(file,title+"\n"+content+"\n","GBK");
             return file.getPath();
         } catch (IOException e) {
             e.printStackTrace();

@@ -15,6 +15,7 @@ import javafx.beans.property.StringProperty;
 import javafx.concurrent.Task;
 import wan.noveldownloader.controller.ItemController;
 import wan.noveldownloader.utils.DownloadTool;
+import wan.noveldownloader.utils.JdbcUtil;
 
 /**
  * @author StarsOne
@@ -22,6 +23,7 @@ import wan.noveldownloader.utils.DownloadTool;
  * @description
  */
 public class DownloadingItem {
+    private String webUrl;
     private String downloadPath;
     private Map<Integer, String> maps;
     private String name;
@@ -42,8 +44,23 @@ public class DownloadingItem {
         void onFinish();
     }
 
-    public DownloadingItem(String name, String imgPath, String downloadPath, Map<Integer, String> maps) {
-        this.downloadPath = downloadPath;
+    public void setHasDownloadCount() {
+        String[] list = new File(downloadPath).list();
+        if (list != null) {
+            String s = list[list.length - 1];
+            int start = s.indexOf("_");
+            int end = s.indexOf(".");
+            String substring = s.substring(start+1,end);
+            new File(s).delete();//最后的那个缓存文件可能不完整，删除
+            this.hasDownloadCount = Integer.valueOf(substring);
+        } else {
+            this.hasDownloadCount =0;
+        }
+
+    }
+    public DownloadingItem(String name, String imgPath, String downloadPath1, Map<Integer, String> maps,String webUrl) {
+        this.webUrl = webUrl;
+        downloadPath = downloadPath1;
         this.maps = maps;
         this.name = name;
         this.imgPath = imgPath;
@@ -55,7 +72,8 @@ public class DownloadingItem {
         int start = url.indexOf("k");
         int end = url.lastIndexOf("/");
         String tempName = url.substring(start + 2, end) + "_";
-
+        //downloadpath = q:\xx\qianbi\temp\5486
+        downloadPath = downloadPath+File.separator+tempName;
         task = new Task<Void>() {
 
             @Override
@@ -66,18 +84,17 @@ public class DownloadingItem {
 
             @Override
             protected Void call() throws Exception {
-                int i = 0;
+                //int i = 0;
                 //下载每一章
-                while (i < maps.size()) {
+                while (hasDownloadCount < maps.size()) {
 
                     if (!isPause) {
-                        String url = maps.get(i);
-                        DownloadTool.downloadChapter(url, downloadPath, i);
+                        String url = maps.get(hasDownloadCount);
+                        DownloadTool.downloadChapter(url, downloadPath, hasDownloadCount);
                         //保存章节缓存，之后合并文件需要
-                        tempFileMaps.put(i, downloadPath + tempName + i + ".txt");
+                        tempFileMaps.put(hasDownloadCount, downloadPath+File.separator + tempName + hasDownloadCount + ".txt");
                         //更新进度条的进度
-                        updateProgress(i, maps.size());
-                        hasDownloadCount = i;
+                        updateProgress(hasDownloadCount, maps.size());
                         //更新已下载章节数
                         setProcessText();
                         updateMessage(getProcessText());
@@ -85,7 +102,7 @@ public class DownloadingItem {
                         double temp = hasDownloadCount / (allCount * 1.0);
                         DecimalFormat df = new DecimalFormat("0.00");
                         percentProgressTextProperty.set(df.format(temp * 100) + "%");
-                        i++;
+                        hasDownloadCount++;
                     } else {
                         Thread.sleep(10);
                     }
@@ -107,6 +124,7 @@ public class DownloadingItem {
                     }
                     chapterFile.delete();//删除当前章节的缓存txt文件
                     if (j + 1 == allCount) {
+                        new JdbcUtil().deleteDownloadingDataListByDownloadPath(downloadPath1);//删除数据库的下载
                         flagTextProperty.set("合并完成");
                     }
                 }
@@ -185,4 +203,7 @@ public class DownloadingItem {
         return task;
     }
 
+    public String getWebUrl() {
+        return webUrl;
+    }
 }

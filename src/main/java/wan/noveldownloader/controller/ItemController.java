@@ -3,6 +3,8 @@ package wan.noveldownloader.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
 
+import org.apache.commons.io.FileUtils;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,6 +24,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import wan.noveldownloader.bean.DownloadingItem;
 import wan.noveldownloader.utils.DownloadTool;
+import wan.noveldownloader.utils.JdbcUtil;
 import wan.noveldownloader.utils.MyUtils;
 
 /**
@@ -70,8 +73,20 @@ public class ItemController implements Initializable {
         }
     }
 
+    /**
+     * 取消当前下载任务
+     */
     public void closeThis() {
         listener.onclick(rootPane);
+        pause();
+        String webUrl = item.getWebUrl();
+        File file = new File(webUrl);
+        try {
+            FileUtils.deleteDirectory(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        new JdbcUtil().deleteDownloadingDataListByWebUrl(webUrl);
     }
 
     /**
@@ -80,27 +95,6 @@ public class ItemController implements Initializable {
     public void startDownloadChacter() {
         new Thread(item.getTask()).start();
 
-       /* //开启线程，观察任务是否完成，移除当前item
-        new Thread(new Task<Void>() {
-            @Override
-            protected void succeeded() {
-                super.succeeded();
-                listener.onclick(rootPane);
-                //onFinishListener.onFinish(item);
-            }
-
-            @Override
-            protected Void call() throws Exception {
-                while (true) {
-                    if (item.getFlagTextProperty().get().equals("合并完成")) {
-                        break;
-                    } else {
-                        Thread.sleep(2000);
-                    }
-                }
-                return null;
-            }
-        }).start();*/
     }
 
     /**
@@ -123,6 +117,7 @@ public class ItemController implements Initializable {
             @Override
             protected Void call() {
                 item = DownloadTool.getTaskMessage(url, downloadPath);
+                item.setHasDownloadCount();//续载
                 return null;
             }
         }).start();
@@ -144,7 +139,7 @@ public class ItemController implements Initializable {
     public void setOnclick(btnOnclickListener listener1) {
         listener = listener1;
         btnCancel.setOnAction(event -> {
-            listener.onclick(rootPane);
+           closeThis();
         });
 
     }

@@ -24,6 +24,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import wan.noveldownloader.adapter.DownloadingAdapter;
 import wan.noveldownloader.bean.DownloadItem;
+import wan.noveldownloader.bean.DownloadingData;
 import wan.noveldownloader.bean.HasDownloadItem;
 import wan.noveldownloader.utils.BaseController;
 import wan.noveldownloader.utils.DialogBuilder;
@@ -74,7 +75,7 @@ public class MainSceneController extends BaseController {
     private JFXCheckBox checkboxClip;
     @FXML
     private JFXButton btnDeleteDownload;
-    private JdbcUtil jdbcUtil = new JdbcUtil(MyUtils.getCurrentPath());
+    private JdbcUtil jdbcUtil = new JdbcUtil();
 
     @FXML
     private JFXTabPane rootPanel;
@@ -97,14 +98,14 @@ public class MainSceneController extends BaseController {
         });
 
         //从数据库中读取下载目录
-        if (jdbcUtil.isPathTableExist()) {
-            downloadPath = jdbcUtil.getDownloadPath();
-        } else {
-            //不存在，设置默认目录，并把默认目录存到数据库中
+        if (jdbcUtil.getDownloadPath().equals("")) {
+            //设置为默认下载目录
             downloadPath = MyUtils.getCurrentPath() + File.separator + "下载";
             jdbcUtil.savePath(downloadPath);
-            jdbcUtil.setOpenClipBoard(false);
+        } else {
+            downloadPath = jdbcUtil.getDownloadPath();
         }
+
         tvDownload.setText(downloadPath);
 
         //剪贴板开关的选中设置
@@ -123,7 +124,6 @@ public class MainSceneController extends BaseController {
             tvDownload.setText(downloadPath);
             jdbcUtil.savePath(downloadPath);
         });
-
         children = hasDownloadPane.getChildren();
 
         downloadingAdapter = new DownloadingAdapter(downloadingContainer, this);
@@ -139,12 +139,15 @@ public class MainSceneController extends BaseController {
 
         //全部删除
         btnCancelAll.setOnAction(event -> {
-            ObservableList<Node> nodes = downloadingContainer.getChildren();
-            //先停止（全部暂停）
+            List<ItemController> itemControllers = downloadingAdapter.getItemControllers();
+            for (ItemController itemController : itemControllers) {
+                itemController.closeThis();
+            }
+      /*      //先停止（全部暂停）
             pauseAllTask();
             //TODO 删除硬盘中的文件
             //删除列表
-            downloadingAdapter.deleteAllNode();
+            downloadingAdapter.deleteAllNode();*/
         });
 
         btnAddTask.setOnAction(event -> new DialogBuilder(btnAddTask).setTitle("输入网址")
@@ -153,15 +156,18 @@ public class MainSceneController extends BaseController {
                     //TODO 多余的网站建立不同的缓存目录
                     if (result.contains("www.x23qb.com")) {
                         File file = new File(downloadPath + File.separator + "temp" + File.separator + "qianbi" + File.separator);
+                        File file1 = new File(file,"img");//图片文件夹
                         //创建文件夹
-                        if (!file.exists()) {
+                        if (!file.exists() && !file1.exists()) {
                             //成功创建文件夹之后，下载操作
-                            if (file.mkdirs()) {
-                                downloadingAdapter.addNode(result, downloadPath + File.separator + "temp" + File.separator + "qianbi" + File.separator);
+                            if (file.mkdirs() && file1.mkdirs()) {
+                                jdbcUtil.saveDownloadingData(new DownloadingData(result,file.getPath()));//存放数据库
+                                downloadingAdapter.addNode(result, file.getPath());
                             }
                         } else {
                             //文件夹以及存在，下载操作
-                            downloadingAdapter.addNode(result, downloadPath + File.separator + "temp" + File.separator + "qianbi" + File.separator);
+                            jdbcUtil.saveDownloadingData(new DownloadingData(result,file.getPath()));//存放数据库
+                            downloadingAdapter.addNode(result, file.getPath());
                         }
                     } else {
                         new DialogBuilder(btnAddTask).setMessage("输入小说地址有误").setTitle("错误").setNegativeBtn("确定").create();
@@ -171,6 +177,14 @@ public class MainSceneController extends BaseController {
         readDownloadList();
         openClipBoard();
         btnDeleteDownload.setOnAction(event -> deleteAllHasDownloadItem());
+        readDownloadingList();
+    }
+
+    private void readDownloadingList() {
+        List<DownloadingData> downloadingDataList = jdbcUtil.getDownloadingDataList();
+        for (DownloadingData downloadingData : downloadingDataList) {
+            downloadingAdapter.addNode(downloadingData.getUrl(),downloadingData.getDownloadPath());
+        }
     }
 
 

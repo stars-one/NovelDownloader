@@ -7,29 +7,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27fa4157-c485-4431-bc68-a041573bd5fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/NovelDownloader_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/NovelDownloader_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/config.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_11.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_12.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_13.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_14.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_15.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_16.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_17.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_18.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_19.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_20.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_21.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_22.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_23.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_24.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_25.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_26.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_27.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_28.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/768_/768_9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/下载/temp/qianbi/img/768s.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/bean/DownloadingData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/NovelDownloader.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/NovelDownloader.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/commons-io-2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/jfoenix-8.0.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/NovelDownloader_jar/jsoup-1.12.1.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/adapter/DownloadingAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/adapter/DownloadingAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/ItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/MainSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/fxml/scene_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/fxml/scene_main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/MyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/MyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wan/noveldownloader/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/DownloadTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/DownloadTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbcUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbcUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/wan/noveldownloader/adapter/DownloadingAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/adapter/DownloadingAdapter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/wan/noveldownloader/bean/DownloadingItem$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/bean/DownloadingItem$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/wan/noveldownloader/bean/DownloadingItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/bean/DownloadingItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/wan/noveldownloader/controller/ItemController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/controller/ItemController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/wan/noveldownloader/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/controller/ItemController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/wan/noveldownloader/controller/MainSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/controller/MainSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wan/noveldownloader/fxml/scene_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/fxml/scene_main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wan/noveldownloader/utils/DownloadTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/utils/DownloadTool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wan/noveldownloader/utils/JdbcUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wan/noveldownloader/utils/JdbcUtil.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -108,7 +135,7 @@
         <counts>
           <entry key="css" value="1" />
           <entry key="fxml" value="14" />
-          <entry key="java" value="77" />
+          <entry key="java" value="84" />
           <entry key="png" value="3" />
           <entry key="xml" value="2" />
         </counts>
@@ -117,7 +144,7 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="Image" value="3" />
-          <entry key="JAVA" value="77" />
+          <entry key="JAVA" value="84" />
           <entry key="XML" value="16" />
         </counts>
       </usages-collector>
@@ -126,14 +153,14 @@
           <entry key="css" value="5" />
           <entry key="dummy" value="7" />
           <entry key="fxml" value="23" />
-          <entry key="java" value="16000" />
+          <entry key="java" value="17618" />
           <entry key="xml" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="5" />
-          <entry key="JAVA" value="16000" />
+          <entry key="JAVA" value="17618" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="XML" value="39" />
         </counts>
@@ -148,8 +175,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/MainSceneController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="88" column="49" lean-forward="true" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="49" />
+            <state relative-caret-position="125">
+              <caret line="181" column="69" lean-forward="true" selection-start-line="181" selection-start-column="69" selection-end-line="181" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -158,47 +185,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/adapter/DownloadingAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/fxml/scene_main.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="177" column="47" lean-forward="true" selection-start-line="177" selection-start-column="47" selection-end-line="177" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadPath.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-              <folding>
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
-                <element signature="e#456#457#0" expanded="true" />
-                <element signature="e#487#488#0" expanded="true" />
-                <element signature="e#514#515#0" expanded="true" />
-                <element signature="e#554#555#0" expanded="true" />
-                <element signature="e#586#587#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/HasDownloadItemController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="199">
+              <caret line="63" column="57" lean-forward="true" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -207,47 +197,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/MyUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1818">
-              <caret line="110" column="51" lean-forward="true" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/adapter/DownloadingAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1794">
-              <caret line="78" column="76" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbcUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1863">
-              <caret line="81" column="55" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/ItemController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4370">
-              <caret line="194" column="16" selection-start-line="194" selection-start-column="16" selection-end-line="194" selection-end-column="16" />
+            <state relative-caret-position="-682">
+              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1757#1758#0" expanded="true" />
-                <element signature="e#1799#1800#0" expanded="true" />
                 <element signature="e#5180#5181#0" expanded="true" />
                 <element signature="e#5207#5208#0" expanded="true" />
               </folding>
@@ -256,14 +211,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/HasDownloadItem.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            <state relative-caret-position="92">
+              <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
+              <folding>
+                <element signature="e#5489#5490#0" expanded="true" />
+                <element signature="e#5516#5517#0" expanded="true" />
+                <element signature="e#6428#6429#0" expanded="true" />
+                <element signature="e#6457#6458#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/DownloadTool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="84" column="78" lean-forward="true" selection-start-line="84" selection-start-column="78" selection-end-line="84" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbcUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1191#1192#0" expanded="true" />
-                <element signature="e#1218#1219#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+              <folding>
+                <element signature="e#351#352#0" expanded="true" />
+                <element signature="e#377#378#0" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
+                <element signature="e#445#446#0" expanded="true" />
+                <element signature="e#484#485#0" expanded="true" />
+                <element signature="e#519#520#0" expanded="true" />
+                <element signature="e#575#576#0" expanded="true" />
+                <element signature="e#623#624#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -287,6 +283,10 @@
       <find>setPercentProgressTextProperty</find>
       <find>listener</find>
       <find>btnDelete</find>
+      <find>close</find>
+      <find>closeThis</find>
+      <find>tempFileMaps</find>
+      <find>btnCancel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -312,20 +312,21 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingItem1.java" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/DownloadTool.java" />
-        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/ItemController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/HasDownloadItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadPath.java" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbcUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/HasDownloadItemController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/adapter/DownloadingAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/fxml/scene_main.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/MyUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/adapter/DownloadingAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/MainSceneController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/DownloadTool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbcUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/ItemController.java" />
       </list>
     </option>
   </component>
@@ -631,12 +632,12 @@
       <workItem from="1565180885700" duration="598000" />
       <workItem from="1565185960950" duration="35543000" />
       <workItem from="1565531360431" duration="31000" />
-      <workItem from="1565584736899" duration="2781000" />
+      <workItem from="1565584736899" duration="15749000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172678000" />
+    <option name="totallyTimeSpent" value="185646000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -650,7 +651,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49876544" visible="true" weight="0.21447721" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49876544" visible="true" weight="0.21447721" />
       <window_info id="Structure" order="1" sideWeight="0.5012346" side_tool="true" weight="0.16957104" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -658,7 +659,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32831326" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.39006025" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43975905" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.43975905" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32831326" />
@@ -689,11 +690,44 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/MainSceneController.java</url>
-          <line>226</line>
+          <line>237</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/MainSceneController.java</url>
+          <line>180</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbcUtil.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbcUtil.java</url>
+          <line>98</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingItem.java</url>
+          <line>115</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/ItemController.java</url>
+          <line>81</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -779,13 +813,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingItem1.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/adapter/RecyclerAdapter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/DownloadTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1702">
-          <caret line="91" column="14" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/fxml/itemb.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
@@ -871,13 +898,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/img/file.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -926,40 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/adapter/DownloadingAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1794">
-          <caret line="78" column="76" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbcUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1863">
-          <caret line="81" column="55" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/ItemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4370">
-          <caret line="194" column="16" selection-start-line="194" selection-start-column="16" selection-end-line="194" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1757#1758#0" expanded="true" />
-            <element signature="e#1799#1800#0" expanded="true" />
-            <element signature="e#5180#5181#0" expanded="true" />
-            <element signature="e#5207#5208#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/HasDownloadItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
@@ -974,16 +960,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/img/icon.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/MainSceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="88" column="49" lean-forward="true" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/fxml/scene_main.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -1002,8 +978,87 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/MyUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1818">
-          <caret line="110" column="51" lean-forward="true" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
+        <state relative-caret-position="253">
+          <caret line="43" column="47" lean-forward="true" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/MainSceneController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="181" column="69" lean-forward="true" selection-start-line="181" selection-start-column="69" selection-end-line="181" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
+          <folding>
+            <element signature="e#5489#5490#0" expanded="true" />
+            <element signature="e#5516#5517#0" expanded="true" />
+            <element signature="e#6428#6429#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/adapter/DownloadingAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="63" column="57" lean-forward="true" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/DownloadTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="84" column="78" lean-forward="true" selection-start-line="84" selection-start-column="78" selection-end-line="84" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/bean/DownloadingData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding>
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#575#576#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/utils/JdbcUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wan/noveldownloader/controller/ItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-682">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5180#5181#0" expanded="true" />
+            <element signature="e#5207#5208#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

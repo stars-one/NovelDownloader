@@ -12,7 +12,6 @@ import wan.noveldownloader.controller.HasDownloadItemController;
 import wan.noveldownloader.controller.ItemController;
 import wan.noveldownloader.controller.MainSceneController;
 import wan.noveldownloader.utils.JdbcUtil;
-import wan.noveldownloader.utils.MyUtils;
 
 /**
  * @author StarsOne
@@ -62,7 +61,7 @@ public class DownloadingAdapter {
 
             //存在数据库中
             DownloadItem downloadItem = new DownloadItem(filePath, imgPath);
-            new JdbcUtil(MyUtils.getCurrentPath()).addDownloadItem(downloadItem);
+            new JdbcUtil().addDownloadItem(downloadItem);
         });
 
 

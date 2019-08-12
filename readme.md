@@ -7,7 +7,7 @@
 
 喜欢的话，不妨打赏一波！
 
-软件交流区：**690380139**
+软件交流QQ群：**690380139**
 
 断点下载暂未实现，小说下载途中，一定不要关闭软件，否则再次打开软件，之前的正在下载的任务会清空，只能重新下载。
 
@@ -24,7 +24,12 @@ java -jar d:\test\NovelDownloader.jar
 ```
 java -Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -jar Q:\JavaProject\NovelDownloader\out\artifacts\NovelDownloader_jar\NovelDownloader.jar
 ```
+
+## 预览
+![](https://img2018.cnblogs.com/blog/1210268/201908/1210268-20190812204853818-799797344.gif)
+
 ## 功能：
+- 取消正在下载的任务（已完成）
 - 文件夹选择，设置下载链接（已完成）
 - 读取存在的历史任务（已完成）
 - 后台剪切板监听（似乎没有API）
@@ -34,11 +39,13 @@ java -Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -jar 
 - 全部暂停和全部开始（已完成）
 - 读取已下载记录（已完成）
 - 删除下载任务（已完成）
-- 下载完成界面（半完成）
+- 下载完成界面（已完成）
 - 合并章节（已完成）
 - 提示文字（已完成）
-- 支持其他网站（笔趣阁..)
+- 支持其他网站（笔趣阁..)后续添加
 
+## 书源
+铅笔小说网：[www.x23qb.com](https://www.x23qb.com)
 ## bug解决：
 线程更新ui，会出现数组越界 -1 异常
 

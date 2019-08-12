@@ -9,10 +9,12 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import wan.noveldownloader.bean.DownloadItem;
 import wan.noveldownloader.bean.DownloadPath;
+import wan.noveldownloader.bean.DownloadingData;
 
 /**
  * @author StarsOne
@@ -32,22 +34,80 @@ public class JdbcUtil {
 
     private Connection connection;
 
-    public JdbcUtil(String currentPath) {
+    public boolean isTableExist(String tableName) {
+        try {
+            QueryRunner queryRunner = new QueryRunner(true);
+            int count = queryRunner.query(connection, "select count(1) from sqlite_master where tbl_name = ? and type='table'", new ScalarHandler<>(),tableName);
+            return count>0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public JdbcUtil() {
+        String currentPath = MyUtils.getCurrentPath();
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:" + currentPath + File.separator + "config.db");
             //在数据库中创建下载列表
             QueryRunner queryRunner = new QueryRunner(true);
-            int count = queryRunner.query(connection, "select count(1) from sqlite_master where tbl_name = 'downloaditem' and type='table'", new ScalarHandler<>());
             //下载列表不存在则创表
-            if (count <= 0) {
+            if (!isTableExist("downloaditem")) {
                 queryRunner.update(connection, "create table downloaditem(id int,filepath varchar2(255),imgPath varchar2(255))");
             }
-
+            if (!isTableExist("path")) {
+                queryRunner.update(connection, "create table path(id int primary key,path varchar2(255))");
+                queryRunner.update(connection, "insert into path values(1,'')");
+                queryRunner.update(connection, "insert into path values(2,'0')");//剪切板监控默认关
+            }
+            if (!isTableExist("downloadingInfo")) {
+                queryRunner.update(connection,"create table downloadingInfo(url varchar2(255),downloadpath varchar2(255) )");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
+    public void deleteDownloadingDataListByWebUrl(String webUrl) {
+        QueryRunner queryRunner = new QueryRunner(true);
+        try {
+            queryRunner.update(connection, "delete from downloadinginfo where url=?", webUrl);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteDownloadingDataListByDownloadPath(String downloadPath) {
+        QueryRunner queryRunner = new QueryRunner(true);
+        try {
+            queryRunner.update(connection, "delete from downloadinginfo where downloadpath=?", downloadPath);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public List<DownloadingData> getDownloadingDataList() {
+        QueryRunner queryRunner = new QueryRunner(true);
+        try {
+            List<DownloadingData> list = queryRunner.query(connection, "select * from downloadinginfo", new BeanListHandler<>(DownloadingData.class));
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return new ArrayList<>();
+    }
+    public void saveDownloadingData(DownloadingData downloadingData) {
+        QueryRunner queryRunner = new QueryRunner(true);
+
+        try {
+            queryRunner.update(connection, "insert into downloadinginfo values(?,?)", downloadingData.getUrl(), downloadingData.getDownloadPath());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * 获得已下载item列表
+     * @return
+     */
     public List<DownloadItem> getDownloadList() {
         QueryRunner queryRunner = new QueryRunner(true);
 
@@ -59,23 +119,11 @@ public class JdbcUtil {
         return null;
     }
 
+
     /**
-     * 数据库之中是否有path
-     *
-     * @return
+     * 删除指定id的已下载item
+     * @param id
      */
-    public boolean isPathTableExist() {
-        QueryRunner queryRunner = new QueryRunner(true);
-
-        try {
-            int count = queryRunner.query(connection, "select count(1) from sqlite_master where tbl_name = 'path' and type='table'", new ScalarHandler<>());
-            return count > 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
     public void deleteDownloadItem(int id) {
         QueryRunner queryRunner = new QueryRunner(true);
         try {
@@ -88,14 +136,8 @@ public class JdbcUtil {
     public void savePath(String downloadPath) {
         QueryRunner queryRunner = new QueryRunner(true);
         try {
-            if (isPathTableExist()) {
-                //存在，更新下载目录
+            if (isTableExist("path")) {
                 queryRunner.update(connection, "update path set path=? where id=1", downloadPath);
-            } else {
-                //不存在，创建并保存默认的下载目录
-                queryRunner.update(connection, "create table path(id int primary key,path varchar2(255))");
-                queryRunner.update(connection, "insert into path values(1,?)", downloadPath);
-                queryRunner.update(connection, "insert into path values(2,'0')");//剪切板监控默认关
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -104,7 +146,6 @@ public class JdbcUtil {
 
     /**
      * 获得数据库中保存的下载目录
-     *
      * @return
      */
     public String getDownloadPath() {
@@ -119,7 +160,7 @@ public class JdbcUtil {
     }
 
     /**
-     *
+     *保存后台剪切板开关设置
      */
     public void setOpenClipBoard(boolean flag) {
         QueryRunner queryRunner = new QueryRunner(true);
@@ -145,6 +186,10 @@ public class JdbcUtil {
         return false;
     }
 
+    /**
+     * 添加已下载item记录
+     * @param downloadItem
+     */
     public void addDownloadItem(DownloadItem downloadItem) {
         QueryRunner queryRunner = new QueryRunner(true);
         try {
@@ -159,6 +204,7 @@ public class JdbcUtil {
             e.printStackTrace();
         }
     }
+
 
     public static void main(String[] args) {
 
