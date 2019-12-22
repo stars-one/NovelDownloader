@@ -1,5 +1,7 @@
 # 星之小说下载器
 
+此版本已作废，新版Kotlin重构地址：[https://github.com/Stars-One/NovelDownloader-Kotlin](https://github.com/Stars-One/NovelDownloader-Kotlin)
+
 ## 预览
 ![](https://img2018.cnblogs.com/blog/1210268/201908/1210268-20190812204853818-799797344.gif)
 ## 下载地址：
